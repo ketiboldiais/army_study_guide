@@ -1,0 +1,593 @@
+\documentclass{article}
+
+% for URLs
+\usepackage{url}
+
+% Required for inserting images
+\usepackage{graphicx}
+
+% Don't indent paragraphs.
+\usepackage{parskip}
+
+% for long tables
+\usepackage{longtable,booktabs}
+
+% SI units
+\usepackage{siunitx}
+
+% Set the paper size.
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+% Recommended for advanced column types like 'm' and 'b'
+\usepackage{array} 
+
+% Code for making pretty quotes.
+\usepackage[english]{babel}
+\usepackage[autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage[none]{hyphenat}
+
+% Code for increasing the number of subsection levels.
+\usepackage{scrextend}
+\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\makeatletter
+\newcommand\subsubsubsection{\@startsection{paragraph}{4}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+\newcommand\subsubsubsubsection{\@startsection{subparagraph}{5}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+% Code for alphabetized lists.
+\usepackage{datatool}% http://ctan.org/pkg/datatool
+\newcommand{\sortitem}[1]{%
+  \DTLnewrow{list}% Create a new entry
+  \DTLnewdbentry{list}{description}{#1}% Add entry as description
+}
+\newenvironment{sortedlist}{%
+  \DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}% Create new/discard old list
+}{%
+  \DTLsort{description}{list}% Sort list
+  \begin{enumerate}%
+    \DTLforeach*{list}{\theDesc=description}{%
+      \item \theDesc}% Print each item
+  \end{enumerate}%
+}
+
+% Checklists
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+% Alphabetized reg table
+\NewDocumentCommand{\addsymbol}{m m}{%
+  % \addsymbol{<symbol>}{<definition>}{<notation>}
+
+  % Create symboldef database if needed
+  \DTLifdbexists{symboldef}{}{\DTLnewdb{symboldef}}
+
+  \DTLnewrow{symboldef}% Add new entry
+  \DTLnewdbentry{symboldef}{symbol}{#1}% Add symbol
+  \DTLnewdbentry{symboldef}{definition}{#2}% Add definition
+  % \DTLnewdbentry{symboldef}{notation}{#3}% Add notation
+}
+
+
+\title{Board Study Guide}
+\author{Ketib Oldiais}
+\date{Last updated: November 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+Various acronyms are used throughout the sections. If you see an acronym you aren't familiar with, consult the last section, Glossary of Acronyms.
+
+\section{History}
+\subsection{General Army History}
+\begin{itemize}
+    \item 14 June 1775: Second Continental Congress establishes the Continental Army (this date is now the Army's birthday).\footnote{SSG Jarod Perkioniemi, Army NCO History (Part 1): American Revolution, \textsc{u.s. army}, \url{https://www.army.mil/article/18042/army_nco_history_part_1_american_revolution}}
+        \begin{itemize}
+            \item There were five NCO ranks: corporal, sergeant, first sergeant, quartermaster sergeant and sergeant major.\footnote{\textit{Id}.}
+        \end{itemize}
+    \item March 29, 1779: Congress passes resolution to have the \textit{Regulations for the Order and Discipline of the Troops in the United States} "be observed by all the troops of the United States." Facing paper shortages, the majority of the first printed copies were half-bound in blue paper-covered boards—hence its current name, "The Bluebook."
+    \item 11 July 1966: Sergeant Major of the Army rank established. First holder—SMA William O. Woolridge.
+\end{itemize}
+\subsection{82d History}
+\subsubsubsection{World War I}
+\begin{itemize}
+    \item Constituted in the National Army on 5 August 1917 to support the United States’ entry into World War I. 
+    \item Organized 25 August 1917 at Camp Gordon, Georgia.
+    \item Commanding General, Brigadier General W. P. Burnham, held a contest to find a name for the division. Mrs. Vivienne Goodwyn submitted "All American," after seeing that all the division's men came from all 48 states.
+\end{itemize}
+
+\subsubsubsection{Post World War I}
+\begin{itemize}
+    \item 27 May 1919: Division demobilized at Camp Mills, New York
+    \item 24 June 1921: Reconstituted into the Organized Reserves as Headquarters, 82d Division at the Federal Building, Columbia, South Carolina.
+    \item 25 March 1942: Ordered into active service at Camp Claiborne, Louisiana, under the command of General Omar Bradley.
+\end{itemize}
+
+\subsubsubsection{World War II}
+\begin{itemize}
+    \item 13 February 1942: Division re-designated as Division Headquarters, 82d Division.
+    \item 15 August 1942: Division reorganized and designated the 82d Airborne Division (becoming the first airborne division).
+    \item 9 July 1943: Operation HUSKY - parachute assault into Sicily, Italy.
+    \item 13 September 1943: Operation AVALANCHE - parachute assault into Salerno, Italy.
+    \item 6 June 1944: Operation NEPTUNE - 82d assaulted Normandy with 12,000 Parachute and Glider troops.
+\end{itemize}
+
+\subsubsection{Notable Figures}
+\begin{itemize}
+    \item \textbf{Captain Jewett Williams}. 326th Infantry. First All American killed in combat (9 June 1918).
+\end{itemize}
+
+\subsubsubsection{Medal of Honor Recipients}
+\begin{itemize}
+    \item \textbf{LTC Emory J. Pike}. World War I—Vandieres, France, 1918. During a heavy artillery shelling, LTC Pike offered his assistance in reorganizing embattled infantry units. He found 20 men and advanced them towards establishing outposts. A shell wounded one of the outpost men, and LTC Pike rushed to his aid. While rendering aid, another shell went off, wounding LTC Pike. LTC Pike continued to command, eventually succumbing to his wounds.\footnote{Congressional Medal of Honor Society, \textit{Emory Jenison Pike}, \textsc{www.cmohs.org}, \url{https://www.cmohs.org/recipients/emory-j-pike}.}
+    
+    \item \textbf{CPL Alvin C. York}. World War I—Chatel-Chehery, France, 1918. After his platoon had suffered heavy casualties and three other NCOs became casualties, CPL York assumed command. Leading seven men, he charged and took a machine-gun nest firing at his platoon.
+    
+    \item \textbf{PVT John R. Towle}. World War II—Oosterhout, Holland, 1944. PVT Towle's company occupied a defensive position in Nijmegen bridgehead's west sector when an enemy force of about 100 infantrymen, two tanks, and a half-track formed a counterattack. PVT Towle left his foxhole and moved towards small-arms fire to an exposed dike roadbed. PVT Towle fired his rocket launcher and hit both tanks to his immediate front. The vehicles withdrew. PVT Towle then engaged a nearby strong-point with nine Germans, and with one round killed all. Restocking his supply of ammunition, PVT Towle rushed through grazing enemy fire to an exposed position where he could engage the enemy half-track with his rocket launcher. While preparing to fire, a mortar mortally wounded PVT Towle.
+    
+    \item \textbf{PFC Charles N. DeGlopper}. World War II—Merderet River at La Fiere, France, 1944. \textit{Served in C Co., 1st Battalion, 325th Glider Infantry (Red Falcons)}. PFC DeGlopper advanced with the forward platoon to secure a bridgehead across the Merderet River at La Fiere, France. Cut off from the rest of the company while penetrating an outer line of machine guns and riflemen, enemy forces flanked the platoon. Sensing danger, PFC DeGlopper volunteered to distract the enemy while the rest of his platoon withdrew. PFC DeGlopper moved to the road in full view of the enemy and fired at hostile positions. The enemy struck and wounded PFC DeGlopper, but he continued firing. Kneeling in the roadway, he fired burst after burst until killed outright. He successfully drew the enemy away from his platoon, who continued the fight from a more advantageous position and established the first bridgehead over the Merderet.
+    
+    \item 1SG Leonard A. Funk Jr.   
+    
+    \item SSG Felix M. Conde-Falcon.
+\end{itemize}
+
+\subsubsection{Battles}
+\begin{itemize}
+    \item 1918: Battle of Lorraine.
+    \item 1918: Campaign of St. Mihiel.
+    \item 1918: Campaign of Meuse-Argonne.
+\end{itemize}
+
+\section{Enlisted Promotions \& Demotions}
+AR 600-8-19 is the primary regulation for promotions and demotions.
+
+\subsection{Junior Enlisted Promotions}
+Promotion to PV2, PFC, and SPC are automatic, provided the soldier meets TIS and TIG requirements.\footnote{AR 600-8-19, § 2-1(a).}
+
+\section{SHARP}
+The primary regulation covering SHARP is AR 600-52.
+
+\subsection{Definition: Sexual Harassment}
+Under AR 600-52, Ch. 2, § 2-2(c), sexual harassment is defined as follows:
+
+\begin{enumerate}
+    \item Conduct involves unwelcome sexual advances, requests for sexual favors, and deliberate or offensive comments or gestures of a sexual nature when:
+        \begin{enumerate}
+            \item Submission to such conduct is, either explicitly or implicitly, made a term or condition of a person’s job, pay, or career.
+            \item Submission to or rejection of such conduct by a person is used as a basis for career or employment decisions affecting that person.
+            \item Such conduct has the purpose or effect of unreasonably interfering with an individual’s work performance or creates an intimidating, hostile, or offensive working environment.
+        \end{enumerate}
+\end{enumerate}
+
+\subsection{Categories of Sexual Harassment}
+Under AR 600-52, Ch. 2, § 2-2(h), sexual harassment is categorized as follows:
+
+\begin{enumerate}
+    \item \textbf{Verbal}. E.g., telling sexual jokes, using sexual profanity, threats, sexually oriented cadences, or sexual comments; whistling in a sexually suggestive manner; describing someone's physically attributes sexually; using terms such as "honey," "babe," "sweetheart," "dear," or "stud."  
+    \item \textbf{Nonverbal}. E.g., cornering/blocking a passageway, inappropriately/excessively staring at someone, blowing kisses, winking, or licking one’s lips in a suggestive manner. Nonverbal sexual harassment also includes offensive printed material— displaying sexually oriented pictures or cartoons; using electronic communications; or sending sexually oriented texts, faxes, notes, or letters.
+    \item \textbf{Physical contact}. E.g., touching, patting, pinching, bumping, grabbing, kissing, or providing unsolicited back or neck rubs.
+\end{enumerate}
+
+\subsection{Types of Sexual Harassment}
+Under AR 600-52, Ch. 2, § 2-2(i), there are two types of sexual harassment:
+
+\begin{enumerate}
+    \item \textbf{Quid pro quo}. Sexual harassment where conditions are placed on a person’s career or terms of employment in return for favors
+    \item \textbf{Hostile environment}. Sexual harassment where personnel are subjected to offensive, unwanted, and unsolicited comments, behavior, or images (verbal and nonverbal, including through the use of electronic devices and communications) sexual in nature.
+    
+    An abusive or hostile environment need not result in concrete psychological harm to the victim, but rather need only be so severe or pervasive that a reasonable person would perceive, and the victim does perceive, the environment as hostile or offensive.
+    
+    Conduct considered under the hostile environment definition generally includes nonviolent, sexist behaviors (e.g., the use of misogynistic terms, comments about body parts, suggestive pictures, requests for sexual favors, repeated requests for dates or a romantic or sexual relationship, sending unsolicited pictures of genitalia or using AI-enabled tools or applications to generate non-consensual intimate images of another person, and explicit jokes).
+\end{enumerate}
+
+\subsection{Sexual Harassment or Sexual Assault?}
+If a SARC receives a sexual harassment report involving physical contact that is not clearly sexual assault, then the SARC will ask their supporting legal office—without identifying the victim (that is, using non-PII)—if the physical contact constitutes sexual assault.
+
+If the physical contact is deemed sexual assault:
+
+\begin{enumerate}
+    \item The SARC will inform the victim that the unwanted physical contact will be addressed as a sexual assault.
+    \item Advise each victim of the role and availability of a VA.
+    \item Advise each victim of their rights and their right to an SVC.
+    \item Explain to the victim their option for restricted and unrestricted reporting.
+    \item Clearly describe the required response protocol for each type of report.
+\end{enumerate}
+
+All commanders who receive a complaint of sexual harassment that involves physical contact that is not clearly sexual assault will coordinate with their supporting legal office. Any doubts will be resolved in favor of reporting the physical contact to the special agent-in-charge of the supporting USACID office. Unwanted physical touching that does not meet the legal definition of sexual assault may still be addressed using the sexual harassment reporting process.
+
+\subsection{Mandatory Reporters}
+Under AR 600-52, Ch. 2, § 2-2(j), the following are mandatory reporters:
+
+\begin{enumerate}
+    \item \textbf{Commanders at all levels}. Commanders will ensure that all acts of sexual harassment of which they become aware are properly investigated.
+    \item \textbf{Anyone in the chain of command}. This includes supervisors, first sergeants, and senior enlisted advisors (not required to be in the victim’s chain of command). All individuals in a supervisory position are required to report all acts of sexual harassment of which they become aware.
+    \item \textbf{TRADOC instructors}. This does not include United States Military Academy, Army SHARP Academy instructors, and D–SAACP certified drill instructors on appointment orders to provide victim advocacy and assistance.
+    \item \textbf{Law enforcement}. Military police, USACID agents, and any other LEO (both on and off duty).
+    \item \textbf{Army Military OneSource providers}.
+\end{enumerate}
+
+\subsection{Reporting}
+There are three ways to make others aware of a SHARP incident:\footnote{AR 600-52, Ch. 2, §§ 2-5 – 2-6.}
+
+\begin{enumerate}
+    \item Confidential reporting.
+    \item Anonymous complaint.
+    \item Formal complaint.
+\end{enumerate}
+
+\subsubsection{Confidential Reports}
+A Soldier may report sexual harassment, confidentially, to a SARC or VA. In a confidential report, a SHARP professional cannot confront the subject or resolve the sexual harassment. They can only provide services and assistance from the SARC and VA.
+
+After receiving a confidential report, the SARC and VA will:
+
+\begin{enumerate}
+    \item Inform the victim that they are eligible for victims’ services and assistance from the SARC and VA.
+    \item Maintain confidentiality.
+    \item Explain that confidential reporting will not resolve the issue as it possibly would have been resolved through a formal complaint or an anonymous complaint.
+    \item Make clear to the victim that unless the sexual harassment is investigated, the subject will not be held accountable.
+    \item Explain that the SARC and VA cannot maintain confidentiality when there is a clear and present risk to the health or safety of the victim or another individual.
+    \item Explain that the SARC can assign a VA to assist the victim at their request.
+\end{enumerate}
+
+\subsubsection{Anonymous Complaints}
+An anonymous complaint is a report of sexual harassment from an unknown or unidentified source received by a commanding officer or supervisor, regardless of the means of transmission.\footnote{AR 600-52, § 2-7(a).} The reporting individual reporting need not disclose any PII.\footnote{\textit{Id}.}
+
+All anonymous complaints must be referred to the subject’s brigade commander for evaluation.\footnote{AR 600-52, § 2-7(d).} If an anonymous complaint contains sufficient information to permit the initiation of an investigation, the commander will initiate an investigation.\footnote{AR 600-52, § 2-8(a).}
+
+If an investigation initiates: The commander  will appoint investigating officers from outside the victim’s and subject’s assigned brigade-sized element.\footnote{AR 600-52, § 2-8(b).}
+
+If an investigation does not initiate: The information will be documented by the brigade commander in an MFR and retained by the SARC under double lock and key. The MFR will contain the following information, if available:\footnote{AR 600-52, § 2-8(d).}
+
+\begin{todolist}
+    \item Date and time the information was received.
+    \item A detailed description of the facts and circumstances included in the complaint.
+    \item Date and time the complaint was resolved and by whom.
+    \item Any other pertinent information.
+    \item The commander’s signature.
+\end{todolist}
+
+\subsubsection{Formal Complaints}
+
+\section{Counseling}
+ATP 6-22.1 is the primary regulation on military counseling. Under ATP 6-22.1, § 1-3, there are three types of counselings:
+
+\begin{enumerate}
+    \item Event-oriented counseling.
+    \item Performance counseling.
+    \item Professional growth counseling.
+\end{enumerate}
+
+\subsection{Event-oriented Counseling}
+An event-oriented counseling is a counseling concerning a specific event or situation.\footnote{ATP 6-22.1, § 1-5.} Examples\footnote{\textit{Id}.}:
+
+\begin{itemize}
+    \item Performance counseling.
+    \item Reception and integration counseling.
+    \item Crisis counseling.
+    \item Referral counseling.
+    \item Promotion counseling.
+    \item Transition counseling.
+    \item Adverse separation counseling.
+\end{itemize} 
+
+\subsubsection{Performance Counseling}
+These are counselings for specific instances of superior or substandard performance, behavior, or action.\footnote{ATP 6-22.1, § 1-6.} The should be done as close to the event as possible, explicitly state whether performance is up to standard, and what the subordinate did right or wrong.\footnote{\textit{Id}.}
+
+Checklist for performance counselings:\footnote{ATP 6-22.1, § 1-7.}
+
+\begin{todolist}
+    \item Explain the counseling's purpose.
+    \item State what was expected.
+    \item State how the performance failed or exceeded expectation.
+    \item Explain the effect of the behavior, action, or performance on the rest of the organization. 
+    \item If the counseling is for failure, teach the subordinate how to meet the standard and recognize patterns of behavior that may keep the subordinate from meeting the standard.
+\end{todolist}
+
+\subsubsection{Reception \& Integration Counseling}
+Army leaders should counsel all new team members when they join the organization.\footnote{ATP 6-22.1, § 1-8.} Reception and integration counseling serves two important purposes:\footnote{\textit{Id}.}
+\begin{enumerate}
+    \item Identifies and helps alleviate any issues or concerns that new members may have, including any issues resulting from the new duty assignment.
+    \item Familiarizes new team members with organizational standards, roles, and assignments.
+\end{enumerate} 
+
+\subsubsection{Crisis Counseling}
+
+
+\section{Orders}
+This section covers orders. There are three types of orders:
+
+\begin{enumerate}
+    \item \textbf{WARNO (Warning Order)}. This is a basic representation of what the OPORD will look like. It gives your troops a "heads up" for what's about to come.
+    \item \textbf{OPORD (Operations Order)}. This is the complete order, with all the details and plans.
+    \item \textbf{FRAGO (Fragmentary Order)}. This is an order stating a change to original OPORD.
+\end{enumerate}
+
+\subsection{WARNO}
+A WARNO should give a basic summary of each paragraph from the OPORD. Recall the paragraphs of an OPORD:
+
+\begin{enumerate}
+    \item Situation.
+    \item Mission.
+    \item Execution.
+    \item Sustainment.
+    \item Command \& signal.
+\end{enumerate}
+
+\subsubsection{WARNO: Situation}
+The key things we want to include:
+
+\begin{enumerate}
+    \item \textbf{AO \& AI}. Locate on a map where our AO and AI are. 
+    \item \textbf{Enemy description}. Important details about the enemy: How many enemy forces (size)? What is the enemy doing generally (e.g., resupply, reconnaissance, defending, preparing for/conducting offensive operations, etc.)? What does the enemy have? What are their capabilities? What weapon systems are they using? We want to give the troops a general idea of they're about to go up against.
+    \item \textbf{Friendly description}. Identify on a map where friendly forces will be located and what they'll be doing.
+    \item \textbf{Attachments and detachments}. Identify any units that will be attached to us (e.g., engineers, scouts, communications, supply, etc.). Identify any units that will be detached (e.g., a squad or platoon sent elsewhere).
+\end{enumerate}
+
+\subsubsection{WARNO: Mission}
+Explicitly give the mission statement, word-for-word. This mission statement informs troops what their purpose is; what we are trying to accomplish. If you're doing a squad WARNO, this will come from your platoon OPORD. If you're doing a platoon WARNO, this will come from your company OPORD. If you're doing a company WARNO, this will come from your battalion OPORD, and so on.
+
+\subsubsection{WARNO: Execution}
+Items to include:
+
+\begin{enumerate}
+    \item \textbf{Concept of operation}. This is a summary of what the mission looks like. Think event-based planning.
+        \begin{itemize}
+            \item "The operation will begin NLT [time]."
+            \item "Phase 1 begins when we do [action] and ends when we do [action]."
+            \item "Phase 2 begins when we do [action] and ends when we do [action]."
+        \end{itemize}
+    \item \textbf{Tasks to subordinates}. Specify what you want each person/unit to do.
+        \begin{itemize}
+            \item "First squad, I want you to do [actions]."
+            \item "AG1, I want you to do [actions]."
+        \end{itemize}
+    \item \textbf{Coordinating instructions}. Specify the planning timeline. If there are specific uniforms or report formats, state them here.
+        \begin{itemize}
+            \item When will the OPORD be released?
+            \item When should planning products be submitted?
+            \item When will we begin execution?
+        \end{itemize}
+\end{enumerate}
+
+\subsection{OPORD}
+\subsection{FRAGO}
+
+\section{Troop Leading}
+\subsection{Troop Leading Procedures}
+TC 3-31.76 outlines the following troop-leading procedures:
+
+\begin{enumerate}
+    \item Receive the mission.
+    \item Issue a warning order.
+    \item Make a tentative plan.
+    \item Initiate movement.
+    \item Conduct reconnaissance.
+    \item Complete the plan.
+    \item Issue the operations order.
+    \item Supervise and refine.
+\end{enumerate}
+
+\subsubsection{Receive the Mission}
+During this step, the leader receives the mission either in an OPORD or a FRAGO. The leader looks for the following bits of information and answers to the following questions, in preparing for step 2 (issuing a WARNO). You should be giving out a WARNO anywhere from three to fifteen minutes after receiving the mission.
+
+\begin{itemize}
+    \item \textbf{What type of operation is this?} I.e., what are we going to do? Is it a reconnaissance patrol? A hasty ambush?
+    \item \textbf{Where are we conducting this operation?} At this point, we just want a general location. We can get into specifics later.
+    \item \textbf{How much time do we have?} Here, the primary focus is the initial operational timeline.
+    \item \textbf{What reconnaissance do we need to do?} If the operation requires reconnaissance, get those details: Whose doing the reconnaissance? Where? What are they looking for? When do they initiate reconnaissance? How will the reconnaissance be done?
+    \item \textbf{How are we going to move?} Start thinking about where to put people, and when and where they're going to move.
+    \item \textbf{Planning and preparation instructions.} Delegate who should plan what, and who should prepare what. Set deadlines for when you want those plans and preparations complete.
+    \item \textbf{Information requirements}. List bits of information that you, as the leader, want to know about. E.g., "If $x$ happens, notify me immediately."
+    \item \textbf{CCIR (Commander's Critical Information Requirements)}. These are bits of information that the commander wants to know about. It will often consist of two components:
+        \begin{itemize}
+            \item \textbf{PIR (Priority Intelligence Requirements)}. Any information necessary, or deemed necessary, to understanding the threat and operational environment. E.g., details about the enemy, terrain, and weather.
+            \item \textbf{FFIR (Friendly Force Information Requirements)}. Any information necessary, or deemed necessary, to understanding the status and capabilities of our friendly forces.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Issue a WARNO}
+With all the information gathered when the leader received the mission, issue a WARNO. 
+
+\subsection{GOTWA}
+The Army's doctrinal approach to contingency planning. It's an acronym for the following:
+
+\begin{itemize}
+    \item Going: Where are you going?
+    \item Others: Who are you taking with you?
+    \item Time: What time will you return?
+    \item What: What do I do if you don't return?
+    \item Actions: What actions do I take when we make contact?
+\end{itemize}
+
+\section{Airborne Operations}
+\subsection{The Five Points of Performance}
+The following are the five points of performance:
+
+\begin{enumerate}
+    \item Proper exit, check body position, and count.
+    \item Check canopy and gain canopy control and immediately compare your rate of descent with fellow jumpers.
+    \item Keep a sharp lookout at all times and constantly compare your rate of descent.
+    \item Prepare to land.
+    \item Land.
+\end{enumerate}
+
+\subsection{Gavin Calls}
+There are three Gavin calls:
+
+\begin{enumerate}
+    \item \textbf{AA established}. The Assembly area is set and ready to receive paratroopers.
+    \item \textbf{Minimum force established}. The minimum force required to continue mission: 1 organic gun team (an AG and a gunner), 1 leader with a radio, 1 nonorganic fire team (1 TL and 4 soldiers).
+    \item \textbf{100\% accountability}.  Troops and SI accounted for.
+\end{enumerate}
+
+\section{Movement Techniques}
+There are three doctrinal ways to move:
+
+\begin{enumerate}
+    \item Traveling.
+    \item Bounding overwatch.
+    \item Traveling overwatch.
+\end{enumerate}
+
+\section{Ambush}
+\subsection{Principles of Ambush}
+There are three principles of ambush:
+\begin{enumerate}
+    \item Speed.
+    \item Surprise.
+    \item Violence of action.
+\end{enumerate}
+
+\subsection{Formations of Ambush}
+There are three ambush formations:
+
+\begin{enumerate}
+    \item Linear.
+    \item L-shape.
+\end{enumerate}
+
+\subsection{Categories of Ambush}
+There are two categories of ambush:
+
+\begin{enumerate}
+    \item Hasty.
+    \item Deliberate.
+\end{enumerate}
+
+\subsection{Types of Ambush}
+There are three types of ambush:
+
+\begin{enumerate}
+    \item Point.
+    \item Area.
+    \item Anti-armor.
+\end{enumerate}
+
+\section{Patrols}
+There are three types of patrols:
+
+\begin{enumerate}
+    \item Reconnaissance.
+    \item Security.
+    \item Tracking.
+\end{enumerate}
+
+\section{Marksmanship}
+\begin{itemize}
+    \item TC 3-20.40 is the primary publication on marksmanship fundamentals.
+    \item There are six individual weapon tables:
+        \begin{itemize}
+            \item Table I: Preliminary Marksmanship Instruction and Evaluations.
+            \item Table II: Pre-Live-Fire Simulations.
+            \item Table III: Drills.
+            \item Table IV: Basic.
+            \item Table V: Practice.
+            \item Table VI: Qualification (Live-Fire Proficiency Gate).
+        \end{itemize}
+\end{itemize}
+
+\subsection{Rules of Firearm Safety}
+The four rules of firearm safety:\footnote{TC 3-20.40, C-1–C-2.}
+
+\begin{enumerate}
+    \item Treat every weapon as if it is loaded.
+    \item Never point the weapon at anything you do not intend to destroy.
+    \item Keep finger straight and off the trigger until ready to fire.
+    \item Ensure positive identification of the target and its surroundings.
+\end{enumerate}
+
+\subsection{Weapon Safety Status}
+\begin{itemize}
+    \item GREEN. Fully safe. Weapon clear, no ammunition (no magazine or belt), chamber is empty, weapon on SAFE.
+    \item AMBER. Substantially safe. Leader must clear and verify the weapon’s bolt or slide is forward, the chamber is empty, and ammunition is introduced to the weapon.
+    \item RED. Marginally safe. The weapon is on safe, the magazine is locked in the well or the belted ammunition is on the feed tray with the cover closed. For pistols, rifles, carbines, and sniper weapon systems, a round is in the chamber and the bolt is forward in the locked position. For the M249AR, the bolt is locked to the rear, with the ammunition on the feed tray with the cover closed.
+    \item BLACK. Unsafe. Weapon is fully prepared to fire, the firer has positively identified the target, the weapon is on FIRE, and the firer’s finger is on the trigger, and is in the process of engaging the threat.
+\end{itemize}
+
+
+
+\section{Battle Drills}
+This section covers battle drills. According to ATP 3-21.8, a battle drill is a procedure "initiated on a cue, such as an enemy action or a leader's order"—it is "a trained response to that cue, requiring minimal leader orders to accomplish", and is "vital to success in combat and critical to preserving life."
+
+\subsection{Steps to Battle Drill}
+There are five steps to battle drill:
+\begin{enumerate}
+    \item React to the enemy.
+    \item Locate the enemy.
+    \item Attack.
+    \item Consolidate and reorganize.
+\end{enumerate}
+
+\section{Glossary of Acronyms}
+Below are some acronyms you will see over and over again.
+
+\begin{sortedlist}
+  \sortitem{\textbf{AO}.  Area of operations.}
+  \sortitem{\textbf{AI}. Area of interest.}
+  \sortitem{\textbf{WARNO}. Warning order.}
+  \sortitem{\textbf{OPORD}. Operations order.}
+  \sortitem{\textbf{FRAGO}. Fragmentary order. You'll see Army publications use "FRAGORD," but that sounds weird.}
+  \sortitem{\textbf{BN}. Battalion.}
+  \sortitem{\textbf{BDE}. Brigade.}
+  \sortitem{\textbf{BLUF}. Bottom line up front.}
+  \sortitem{\textbf{ALCON}. All concerned. Used to preface emails/messages, akin to "To whom this may concern."}
+  \sortitem{\textbf{NLT}. No later than.}
+  \sortitem{\textbf{ATW}. All the way. Common email/message closer.}
+  \sortitem{\textbf{RLTW}. Rangers lead the way. Common email/message closer.}
+  \sortitem{\textbf{V/R.} Very respectfully. Common email/message closer. Ironically not very respectful to shorten "very respectfully" but that's just me.}
+  \sortitem{\textbf{TLO}. Training Learning Objectives. If you attend some training briefing, you'll hear the presenter yell "TLO" sometimes and the audience echoes it. Though, the echoing is becoming less common with newer soldiers.}
+  \sortitem{\textbf{SM}. Service member.}
+  \sortitem{\textbf{PLT}. Platoon.}
+  \sortitem{\textbf{SQD}. Squad.}
+  \sortitem{\textbf{TOC}. Tactical Operations Center. A location for planning, coordinating, and monitoring military operations.}
+  \sortitem{\textbf{SHARP}. Sexual Harassment/Assault Response and Prevention Program.}
+  \sortitem{\textbf{SMCT}. Soldier's Manual of Common Tasks.}
+  \sortitem{\textbf{ACP}. Access Control Point.}
+  \sortitem{\textbf{ADP}. Army Doctrine Publication.}
+  \sortitem{\textbf{AR}. Army Regulation.}
+\end{sortedlist}
+
+\section{Regulation Appendix}
+This appendix lists some oft-cited Army-related regulations and publications.
+
+% Add symbol entries
+\addsymbol{AR 600-52}{SHARP.}
+\addsymbol{AR 670-1}{Uniforms.}
+\addsymbol{STP 21-1-SMCT}{Warrior tasks and battle drills.}
+\addsymbol{AR 190-14}{Use of force.}
+\addsymbol{AR 600-20}{Army command policy.}
+\addsymbol{ATP 6-22.1}{Military counseling.}
+\addsymbol{ADP 7-0}{Army training principles, framework, and management.}
+\addsymbol{ATP 4-01.45}{Tactical convoy operations.}
+\addsymbol{AR 25-50}{Writing memoranda, correspondence rules.}
+\addsymbol{AR 600-8-19}{Enlisted promotions and demotions.}
+
+% Sort database based on symbol
+\dtlsort{symbol}{symboldef}{\dtlwordindexcompare}
+
+\begin{longtable}{l p{10cm}}
+  \toprule
+  \textbf{Source} & \textbf{Description} \\
+  \midrule\endhead % Add Latin symbols alphabetically here:
+  \DTLforeach{symboldef}{%
+    \Symbol=symbol,
+    \Definition=definition}{%
+    \DTLiffirstrow{}{\\}% Start a new row
+    \Symbol & \Definition} \\
+  \bottomrule
+\end{longtable}
+
+
+\end{document}
