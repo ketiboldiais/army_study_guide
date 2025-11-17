@@ -3,6 +3,9 @@
 % for URLs
 \usepackage{url}
 
+% for inserting svgs
+\usepackage{svg}
+
 % Required for inserting images
 \usepackage{graphicx}
 
@@ -574,6 +577,20 @@ Ways to disinfect water:\footnote{ATP 4-25.12, § 3-11.}
 
 The preferred field method of water disinfection in the United States Army is chlorination which can be accomplished using chlorine compounds such as calcium hypochlorite (granular) and sodium hypochlorite (liquid bleach).\footnote{\textit{Id}.}
 
+\section{Land Navigation}
+The primary regulation on land navigation is TC 3-25.26.
+\subsection{Map Reading}
+\subsubsection{Major Terrain Features}
+\subsubsubsection{Hills}
+A hill is an area of high ground. From a hilltop, the ground slopes down in all directions.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/hill.png}
+    \caption{A hill.}
+    \label{fig:hill}
+\end{figure}
+
 
 \section{Airborne Operations}
 \subsection{The Five Points of Performance}
@@ -600,8 +617,22 @@ There are three Gavin calls:
 A \textbf{tactical convoy} is a military operation used to securely move personnel and cargo by ground transportation.\footnote{ATP 4-01.45, Ch. 1, § 1.} The primary regulation governing convoy operations is ATP 4-01.45.  
 
 \subsection{Convoy Configuration}
+Convoys have three sections:\footnote{ATP 4-01.45, Ch. 1, § 3.}
 
+\begin{enumerate}
+    \item \textbf{Lead}. A pace vehicle and a convoy security element.
+    \item \textbf{Main body}. The majority of vehicles. Petroleum and ammunition vehicles should be dispersed throughout this section. Heavier and slower vehicles should be forward in the main body to assist in gauging and maintaining the convoy pace.
+    \item \textbf{Trail}. Recovery vehicles; assistant convoy commander; aid \& litter; LZ teams; medical personnel; and rear security element.
+\end{enumerate}
 
+{
+\begin{figure}[h]
+    \centering
+    \includesvg{images/example_convoy.svg}
+    \caption{Example convoy operation.}
+    \label{fig:example_convoy_operation}
+\end{figure}
+}
 
 \section{Movement Techniques}
 There are three doctrinal ways to move:
@@ -744,6 +775,8 @@ This appendix lists some oft-cited Army-related regulations and publications.
 \addsymbol{ATP 4-01.45}{Tactical convoy operations.}
 \addsymbol{AR 25-50}{Writing memoranda, correspondence rules.}
 \addsymbol{AR 600-8-19}{Enlisted promotions and demotions.}
+\addsymbol{TC 3-25.26}{Land navigation.}
+\addsymbol{TC 4-02.3}{Field sanitation.}
 
 % Sort database based on symbol
 \dtlsort{symbol}{symboldef}{\dtlwordindexcompare}
