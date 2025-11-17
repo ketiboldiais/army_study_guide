@@ -9,8 +9,21 @@
 % Don't indent paragraphs.
 \usepackage{parskip}
 
+% For ragged paragraph cells in tables.
+\usepackage{array}
+
 % for long tables
 \usepackage{longtable,booktabs}
+
+% Clickable links in PDF
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 % SI units
 \usepackage{siunitx}
@@ -77,7 +90,7 @@
 }
 
 
-\title{Army Study Guide}
+\title{Board Study Guide}
 \author{Ketib Oldiais}
 \date{Last updated: November 2025}
 
@@ -160,8 +173,7 @@ Promotion to PV2, PFC, and SPC are automatic, provided the soldier meets TIS (Ti
     \centering
     % First column is left-aligned
     % second is a paragraph column with 5cm width
-    \begin{tabular}{|l|c|c|c|} 
-    \hline
+    \begin{tabular}{l|c|c|c} 
     \textbf{From} & \textbf{To} & \textbf{TIS Required} & \textbf{TIG Required} \\
     \hline
     
@@ -172,7 +184,6 @@ Promotion to PV2, PFC, and SPC are automatic, provided the soldier meets TIS (Ti
     \hline
 
     PFC & SPC & 2 years & 6 months \\
-    \hline
     
     \end{tabular}
     \par
@@ -187,7 +198,83 @@ Junior enlisted can be waived to the next rank subject to the following limitati
 \end{itemize}
 
 \subsection{NCO Promotions}
+The table below lists the TIS and TIG requirements for NCO promotions.\footnote{AR 600-8-19, § 5-5(a).}
 
+{
+    \centering
+    % First column is left-aligned
+    % second is a paragraph column with 5cm width
+    \begin{tabular}{l|c|c|c} 
+    \textbf{From} & \textbf{To} & \textbf{TIS Required} & \textbf{TIG Required} \\
+    \hline
+    
+    SPC
+    &
+    SGT
+    &
+        \begin{tabular}{p{2.5cm} | p{2.5cm}}
+            \textbf{Secondary} & \textbf{Primary} \\
+            1 year, 6 months & 3 years
+        \end{tabular}
+    &
+        \begin{tabular}{p{2.5cm}| p{2.5cm}}
+            \textbf{Secondary} & \textbf{Primary} \\
+            6 months & 1 year
+        \end{tabular}
+    \\
+    \hline
+
+    SGT
+    &
+    SSG
+    &
+        \begin{tabular}{p{2.5cm} | p{2.5cm}}
+            \textbf{Secondary} & \textbf{Primary} \\
+            2 years & 6 years
+        \end{tabular}
+    &
+        \begin{tabular}{p{2.5cm} | p{2.5cm}}
+            \textbf{Secondary} & \textbf{Primary} \\
+            8 months & 1 year, 6 months
+        \end{tabular}
+    \\
+    
+    \end{tabular}
+    \par
+}
+
+\subsection{Demotions}
+\subsubsection{Demotion Authority}
+The table below lists who has the authority to demote.\footnote{AR 600-8-19, § 7-2.} 
+
+{
+    \centering
+    % First column is left-aligned
+    \begin{tabular}{l|p{10cm}} 
+    \textbf{Demotion} & \textbf{Demotion Authority} \\
+    \hline
+    
+    SPC/CPL \& below & Company, troop, battery, separate detachment commanders. \\
+    \hline
+    SGT/SSG & Field grade CDRs of any organization (LTC or higher). \\
+    \hline
+    SFC/MSG/SGM & CDRs of organizations authorized a CDR in the rank of COL or higher. \\
+    \end{tabular}
+    \par
+}
+
+
+\subsubsection{Demotion Boards}
+\begin{itemize}
+    \item A demotion board is required under these circumstances:\footnote{AR 600-8-19, § 7-1(c).}
+        \begin{enumerate}
+            \item CPL and/or SPC administratively demoted more than one grade. 
+            \item For all NCOs (SGT through SGM) when administratively demoted for misconduct and for inefficiency. 
+        \end{enumerate}
+    \item Board appearance may be declined in writing and will be considered as acceptance of the demotion board’s action.\footnote{\textit{Id}.}
+    \item Individuals in the rank of CPL and below may be demoted up to one grade without action by a board.\footnote{\textit{Id}.}
+    \item Individuals in the rank of PFC may be demoted two grades without a board.\footnote{\textit{Id}.}
+\end{itemize}
 
 \section{SHARP}
 The primary regulation covering SHARP is AR 600-52.
@@ -396,6 +483,14 @@ Items to include:
 
 \subsection{OPORD}
 \subsection{FRAGO}
+\subsection{General Orders for Sentries}
+The Army's three general orders:\footnote{United States Department of the Army, \textit{General Orders}, \textsc{central army registry}, \url{https://rdl.train.army.mil/catalog-ws/view/100.ATSC/2060F1FA-9F0D-4C76-B2EC-CD8D2D336313-1375209548470/GeneralxOrdersxgrn.pdf}}
+
+\begin{enumerate}
+    \item I will guard everything within the limits of my post and quit my post only when properly relieved.
+    \item I will obey my special orders and perform all my duties in a military manner.
+    \item I will report violations of my special orders, emergencies, and anything not covered in my instructions to the commander of the relief.
+\end{enumerate}
 
 \section{Troop Leading}
 \subsection{Troop Leading Procedures}
@@ -444,6 +539,42 @@ The Army's doctrinal approach to contingency planning. It's an acronym for the f
     \item Actions: What actions do I take when we make contact?
 \end{itemize}
 
+\section{Field Sanitation}
+ATP 4-25.12 is the primary regulation on field sanitation.
+
+\subsection{The Five Fs}
+ATP 4-25.12 recognizes five key routes of disease transmission. These key routes must be controlled through hygiene and sanitation practices to prevent spreading illness in the field.
+
+\begin{enumerate}
+    \item \textbf{Fingers}. Soldiers should handwash as much as possible to prevent the transfer of germs from hand to objects or people.
+    \item \textbf{Feces}. Leaders must ensure proper waste disposal to prevent contamination of the environment and water sources.
+    \item \textbf{Flies}. Flies spread diseases by landing on food and other surfaces.
+    \item \textbf{Fluids}. Leaders must ensure drinking water is safe, and soldiers should avoid sharing containers.
+    \item \textbf{Food}. All soldiers must practice proper food handling and storage to prevent foodborne illnesses. 
+\end{enumerate}
+
+\subsection{Water Supplies}
+There are three types of water:\footnote{ATP 4-25.12, § 3-6.}
+
+\begin{enumerate}
+    \item \textbf{Potable water}. Safe to drink—water from a source treated and approved by preventive medicine personnel as meeting potability standards.
+    \item \textbf{Nonpotable water}. Unsafe to drink—water from an untreated or treated source (including bottled water) that has not been tested and determined by preventive medicine personnel as meeting potability standards.
+\end{enumerate}
+
+Potable or nonpotable water can be palatable or unpalatable—\textbf{palatable water} is cool, aerated, significantly free from color, turbidity, taste, and odor, and is generally pleasing to the senses.\footnote{ATP 4-25.12, § 3-9.}
+
+\subsubsection{Water Disinfection}
+Ways to disinfect water:\footnote{ATP 4-25.12, § 3-11.}
+
+\begin{enumerate}
+    \item boiling
+    \item ultraviolet radiation
+    \item Chemical disinfection: Use chlorine, chlorine dioxide, iodine, or ozone.
+\end{enumerate}
+
+The preferred field method of water disinfection in the United States Army is chlorination which can be accomplished using chlorine compounds such as calcium hypochlorite (granular) and sodium hypochlorite (liquid bleach).\footnote{\textit{Id}.}
+
+
 \section{Airborne Operations}
 \subsection{The Five Points of Performance}
 The following are the five points of performance:
@@ -464,6 +595,13 @@ There are three Gavin calls:
     \item \textbf{Minimum force established}. The minimum force required to continue mission: 1 organic gun team (an AG and a gunner), 1 leader with a radio, 1 nonorganic fire team (1 TL and 4 soldiers).
     \item \textbf{100\% accountability}.  Troops and SI accounted for.
 \end{enumerate}
+
+\section{Convoy Operations}
+A \textbf{tactical convoy} is a military operation used to securely move personnel and cargo by ground transportation.\footnote{ATP 4-01.45, Ch. 1, § 1.} The primary regulation governing convoy operations is ATP 4-01.45.  
+
+\subsection{Convoy Configuration}
+
+
 
 \section{Movement Techniques}
 There are three doctrinal ways to move:
