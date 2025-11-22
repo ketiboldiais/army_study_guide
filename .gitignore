@@ -1,11 +1,4 @@
-main.fdb_latexmk
-main.fls
-main.log
-main.synctex.gz
-main.out
-*.aux
-*.toc
-*.out
-*.log
-svg-inkscape/*
-images/*
+*
+!main.pdf
+!main.tex
+!/images/

@@ -15,8 +15,20 @@
 % For ragged paragraph cells in tables.
 \usepackage{array}
 
+% Wraps a figure.
+\usepackage{wrapfig}
+
+% Color table cells
+\usepackage[table]{xcolor}
+
+% Better tables
+\usepackage{booktabs}
+
+% multiple row tables
+\usepackage{multirow}
+
 % for long tables
-\usepackage{longtable,booktabs}
+\usepackage{longtable}
 
 % Clickable links in PDF
 \usepackage{hyperref}
@@ -27,6 +39,9 @@
     linkcolor=black,
     urlcolor=black
 }
+
+% multicolumn text support
+\usepackage{multicol}
 
 % SI units
 \usepackage{siunitx}
@@ -101,6 +116,8 @@
 
 \maketitle
 \tableofcontents
+
+\newpage
 
 \section{Introduction}
 Various acronyms are used throughout the sections. If you see an acronym you aren't familiar with, consult the last section, Glossary of Acronyms.
@@ -582,7 +599,7 @@ The primary regulation on land navigation is TC 3-25.26.
 \subsection{Map Reading}
 \subsubsection{Major Terrain Features}
 \subsubsubsection{Hills}
-A hill is an area of high ground. From a hilltop, the ground slopes down in all directions.
+A hill is an area of high ground.\footnote{TC 3-25.26, § 9-27.} From a hilltop, the ground slopes down in all directions.\footnote{\textit{Id}.}
 
 \begin{figure}[h!]
     \centering
@@ -591,6 +608,66 @@ A hill is an area of high ground. From a hilltop, the ground slopes down in all 
     \label{fig:hill}
 \end{figure}
 
+\subsubsubsection{Saddles}
+A saddle is a dip or low point between two areas of higher ground.\footnote{TC 3-25.26, § 9-28.} A saddle is not necessarily the lower ground between two hilltops; it could be a dip or break along a level ridge crest.\footnote{\textit{Id}.} If you are in a saddle, there is high ground in two opposite directions and lower ground in the other two directions.\footnote{\textit{Id}.} A saddle is normally represented as an hourglass.\footnote{\textit{Id}.}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/saddle.png}
+    \caption{A saddle.}
+    \label{fig:saddle}
+\end{figure}
+
+\subsubsubsection{Valleys}
+A valley is a stretched-out groove in the land, usually formed by streams or rivers. It begins with high ground on three sides and usually has a course of running water through it. Standing in a valley, three directions offer high ground, and the fourth offers low ground. Depending on its size and where you stand, it may not be obvious that there is high ground in the third direction. But, water flows from higher to lower ground.
+
+To determine the direction water is flowing, look at the contour lines. Contour lines forming a valley are either U- or V-shaped. The closed end of the contour line (U or V) always points upstream or toward high ground. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/valley.png}
+    \caption{A valley.}
+    \label{fig:valley}
+\end{figure}
+
+\subsubsubsection{Ridges}
+A ridge is a sloping line of high ground. The ridge's centerline normally has low ground in three directions and high ground in one direction, with varying slope. Contour lines forming a ridge tend to be U-shaped or V-shaped. The closed end of the contour line points away from high ground.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/ridge.png}
+    \caption{A ridge.}
+    \label{fig:ridge}
+\end{figure}
+
+\subsubsubsection{Depressions}
+A depression is a low point in the ground or a sinkhole. It is an area of low ground surrounded by higher ground in all directions; a hole in the ground. On maps, depressions are represented by closed contour lines with tick marks pointing toward low ground.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/depression.png}
+    \caption{A depression.}
+    \label{fig:depression}
+\end{figure}
+
+\subsubsection{Minor Terrain Features}
+\subsubsubsection{Draw}
+A draw is a stream course that is less developed than a valley. In a draw, there is essentially no level ground and little or no maneuver room within its confines. In a draw, the ground slopes upward in three directions and downward in the other direction. A draw could be considered as the initial formation of a valley. The contour lines depicting a draw are U-shaped or V-shaped, pointing toward high ground.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/draw.png}
+    \caption{A draw.}
+    \label{fig:draw}
+\end{figure}
+
+\subsubsubsection{Spur}
+\subsubsubsection{Cliff}
+
+
+\subsubsection{Supplementary Terrain Features}
+\subsubsubsection{Cut}
+\subsubsubsection{Fill}
 
 \section{Airborne Operations}
 \subsection{The Five Points of Performance}
@@ -613,6 +690,38 @@ There are three Gavin calls:
     \item \textbf{100\% accountability}.  Troops and SI accounted for.
 \end{enumerate}
 
+\newpage
+
+\subsection{Prejump}
+Below is the prejump script. During white slip examination, the bold text must be said word-for-word, lest you suffer significant point deductions.
+\begin{multicols}{3}
+\raggedright
+\begin{enumerate}
+    \item The first items I will discuss are \textbf{the five points of performance}.
+    \item The first point of performance is \textbf{proper exit, check body position, and count}. 
+    \item \textbf{Jumpers hit it}. Upon exiting the aircraft, snap into a good tight body position. Keep your eyes open, chin on your chest, elbows tight into your sides, hands on the end of the reserve, with your fingers spread. Bend forward at the waist, keeping your feet and knees together, knees locked to the rear, and count to 6000.
+    \item At the end of your 6000 count, immediately go into your second point of performance, \textbf{check canopy and gain canopy control and immediately compare your rate of decent with fellow jumpers}. Reach up to the elbow-locked position and secure the front set of risers in each hand, simultaneously conducting a 360-degree check of you canopy. Your slider will be fully extended and begin to slide down the suspension lines. Move immediately into comparing your rate of decent with your fellow jumpers. If you are falling faster than your fellow jumpers or you cannot compare your rate of decent, activate your reserve parachute using the pull drop method. If, during your second point of performance, you find that you have twists, and you are not falling faster than your fellow jumpers. Reach up and grasp a set of risers in each hand, thumbs down, knuckles to the rear. Pull the risers apart and begin a vigorous bicycling motion. When the last twist comes out, immediately check canopy and gain canopy control.
+    \item Your third point of performance is \textbf{keep a sharp lookout at all times and constantly compare your rate of descent}.
+    \item Remember the three rules of the air and repeat them after me. \textbf{Always look before you slip, always slip in the opposite direction to avoid collision, and the lower jumper always has the right of way}. Avoid fellow jumpers all the way to the ground by maintaining a 25-foot separation and continue to compare your rate of descent with fellow jumpers. During your third point of performance, release all appropriate equipment tie-downs.
+    \item This brings you to your fourth point of performance, which is \textbf{prepare to land}.
+    \item At approximately 100 feet above ground level or tree top level, look below you to ensure there are no fellow jumpers and lower your equipment, then slip into the wind. Attempt to utilize the slip assist loops or slip assist tabs and execute a one riser slip opposite your direction of drift.  You will execute a one riser slip by grabbing 1-3 arm lengths depending on the wind and hold it deep into your chest until you land.
+        \begin{enumerate}
+            \item If the wind is blowing from your left, reach up with your left hand and grab either riser on the left side and pull a 1-3arm lengths slip deep into your chest until you land.
+            \item If the wind is blowing from your front, reach up with either hand and grab either riser on the front side and pull a 1-3 arm lengths slip deep into your chest until you land.
+            \item If the wind is blowing from your right, reach up with your right hand and grab either riser on the right side and pull a 1-3 arm lengths slip deep into your chest until you land.
+            \item If the wind is blowing from your rear, reach up with either hand and grab either riser on the rear side and pull a 1-3 arm lengths slip deep into your chest until you land.
+            \item If you decide to pull a two-riser slip, secure the risers opposite your direction of drift, and hold them deep into your chest. 
+        \end{enumerate}
+    \item After you have slipped into the wind, you will assume a landing attitude by keeping your feet and knees together, knees slightly bent, elbows tight into your sides, with your head and eyes on the horizon. When the balls of your feet make contact with the ground put your chin down to your chest and execute a proper parachute landing fall. The fifth point of performance is \textbf{land}.
+    \item You will make a proper parachute landing fall by hitting all five points of contact. Touch them, and repeat them after me. 1) \textbf{balls of your feet}; 2) \textbf{calf}; 3) \textbf{thigh}; 4) \textbf{buttocks}; and 5) \textbf{pull up muscle}.  You will never attempt to make a standing landing.
+    \item Remain on the ground and activate both of your canopy release assemblies using either the \textbf{hand to shoulder method} or the \textbf{hand assist method}. To activate your canopy release assembly using the “hand to shoulder” method, reach up with either hand and grasp the corresponding safety clip.  Pull out and down on the safety clip, exposing the cable loop. Insert the thumb, from bottom to top, through the cable loop. Turn your head in the opposite direction, and pull out and down on the cable loop. To activate your canopy release assembly using the “hand assist” method, reach up and grasp the corresponding safety clip. Pull out and down on the safety clip, exposing the cable loop. Insert the thumb, from bottom to top, through the cable loop. Reinforce that hand with the other. Turn your head in the opposite direction, and pull out and down on the cable loop. Place your weapon into operation and remove the parachute harness.
+    \item The next item I will cover is \textbf{recovery of equipment}.
+    \item Once you are out of the parachute harness, remove all air items from the equipment rings. Unzip and turn the universal parachutist recovery bag right side out. Place the parachute harness inside the universal parachutist recovery bag with the smooth side facing up. Secure the risers and place them under the parachute harness.
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
 \section{Convoy Operations}
 A \textbf{tactical convoy} is a military operation used to securely move personnel and cargo by ground transportation.\footnote{ATP 4-01.45, Ch. 1, § 1.} The primary regulation governing convoy operations is ATP 4-01.45.  
 
@@ -634,7 +743,24 @@ Convoys have three sections:\footnote{ATP 4-01.45, Ch. 1, § 3.}
 \end{figure}
 }
 
-\section{Movement Techniques}
+\section{Tactics}
+\textit{Key regulations}: ATP 3-21.8 (Infantry Platoon \& Squad); TC 3-21.76 (The Ranger Handbook).
+
+\subsection{Formations}
+\subsubsection{Platoon Column Formation}
+Figure \ref{fig:platoon_column} shows a platoon column formation.
+
+{
+\begin{figure}[h]
+    \centering
+    \includesvg[width=210pt]{images/platoon_column.svg}
+    \caption{Platoon column.}
+    \label{fig:platoon_column}
+\end{figure}
+}
+
+
+\subsection{Movement Techniques}
 There are three doctrinal ways to move:
 
 \begin{enumerate}
@@ -643,8 +769,95 @@ There are three doctrinal ways to move:
     \item Traveling overwatch.
 \end{enumerate}
 
-\section{Ambush}
-\subsection{Principles of Ambush}
+\subsection{Traveling}
+\subsection{Bounding Overwatch}
+\subsubsection{Alternating Bounding Overwatch}
+\textit{See} Figure \ref{fig:alternating_bounding_overwatch}.
+{
+\begin{figure}[h]
+    \centering
+    \includesvg[width=150pt]{images/alternating_bounding_overwatch.svg}
+    \caption{Alternating bounding overwatch.}
+    \label{fig:alternating_bounding_overwatch}
+\end{figure}
+}
+\subsubsection{Successive Bounding Overwatch}
+\subsection{Traveling Overwatch}
+
+
+\subsection{Movement to Contact: Platoon}
+Movement to contact is one of the five offensive tasks conducted at the platoon level. A movement to contact gains or regains contact with the enemy, typically in order to destroy them. We may not know how large enemy is, but we either know or have a general idea of where they are.
+
+Per TC 3-21.76, there are two types of movement to contact:
+
+\begin{enumerate}
+    \item Search \& attack.
+    \item Cordon search.
+\end{enumerate}
+
+\subsubsection{Search \& Attack}
+Key performance measures:
+\begin{enumerate}
+    \item We must detect the enemy before they detect us.
+    \item Once the enemy is engaged, fix them in place and maneuver on them in order to destroy.
+    \item Maintain security, especially rear security—this ensures the enemy does not flank us from any direction.
+\end{enumerate}
+
+A few additional notes:
+
+\begin{itemize}
+    \item We do not have to make an ORP to start our movement. We can, but it is unnecessary.
+    \item This is a great opportunity to try different movement techniques.
+    
+\end{itemize}
+
+
+
+\textbf{Manning}. We start with a platoon of four squads, each with a specific task:
+\begin{enumerate}
+    \item 1st Squad—security.
+    \item 2nd Squad—assault 1.
+    \item 3rd Squad—assault 2.
+    \item WPNS—Heavy guns (M240Bs).
+\end{enumerate}
+
+\textbf{Begin}. We start by moving out of the patrol base. Say we exit out of the 6. \textit{See} Figure \ref{fig:movement_to_contact_1}. As we move, we continue doing SLLS and ERRP. 
+
+{
+\begin{figure}[h]
+    \centering
+    \includesvg[width=130pt]{images/movement_to_contact_1.svg}
+    \caption{Exiting out of the patrol base.}
+    \label{fig:movement_to_contact_1}
+\end{figure}
+}
+
+We move in a platoon column formation. \textit{See} Figure \ref{fig:movement_to_contact_plt_col}. We begin by moving in traveling overwatch. We use traveling overwatch whenever there is a possible enemy threat. Doctrinally, the HQ element (the PL) is 50m away from the security squad. The rest of the elements are separated by 20m. Realistically, spacing is determined by METT-TC.
+
+{
+\begin{figure}[h]
+    \centering
+    \includesvg[width=240pt]{images/movement_to_contact_plt_column.svg}
+    \caption{Movement to contact platoon column.}
+    \label{fig:movement_to_contact_plt_col}
+\end{figure}
+}
+
+\textbf{Moving closer to the enemy}. Suppose we have an enemy just ahead of us. \textit{See} Figure \ref{fig:movement_to_contact_enemy_ahead}. We will not just walk down until we get hit. Recall the first performance measure: We must detect the enemy before they detect us. To ensure we meet this measure, we use our movement techniques.
+
+{
+\begin{figure}[h]
+    \centering
+    \includesvg[width=300pt]{images/movement_to_contact_enemy_ahead.svg}
+    \caption{Movement to contact, enemy ahead.}
+    \label{fig:movement_to_contact_enemy_ahead}
+\end{figure}
+}
+
+The best movement technique here is bounding overwatch. That said, controlling a bounding overwatch at the platoon level is extremely difficult. There are two types of bounding overwatch we can use: (1) Successive bounding overwatch and (2) alternating bounding overwatch.
+
+\subsection{Ambush}
+\subsubsection{Principles of Ambush}
 There are three principles of ambush:
 \begin{enumerate}
     \item Speed.
@@ -652,7 +865,7 @@ There are three principles of ambush:
     \item Violence of action.
 \end{enumerate}
 
-\subsection{Formations of Ambush}
+\subsubsection{Formations of Ambush}
 There are three ambush formations:
 
 \begin{enumerate}
@@ -660,7 +873,7 @@ There are three ambush formations:
     \item L-shape.
 \end{enumerate}
 
-\subsection{Categories of Ambush}
+\subsubsection{Categories of Ambush}
 There are two categories of ambush:
 
 \begin{enumerate}
@@ -668,7 +881,7 @@ There are two categories of ambush:
     \item Deliberate.
 \end{enumerate}
 
-\subsection{Types of Ambush}
+\subsubsection{Types of Ambush}
 There are three types of ambush:
 
 \begin{enumerate}
@@ -677,7 +890,7 @@ There are three types of ambush:
     \item Anti-armor.
 \end{enumerate}
 
-\section{Patrols}
+\subsection{Patrols}
 There are three types of patrols:
 
 \begin{enumerate}
@@ -732,6 +945,134 @@ There are five steps to battle drill:
     \item Consolidate and reorganize.
 \end{enumerate}
 
+\section{Weapon Systems}
+\subsection{M4A1 Carbine}
+\textit{Key publication}: TC 3-22.9.
+
+The M4A1 is a 5.56mm, magazine fed, gas-operated, air-cooled, semi-automatic or fully automatic, hand-held, shoulder-fired weapon.
+
+{
+\begin{center}
+\begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Caliber} & \multicolumn{2}{l|}{5.56mm} \\
+    \hline 
+    \multirow{2}{*}{\textbf{Weight}}  & \textit{Loaded} & 7.5 lbs. \\ \cline{2-1}\cline{3-2}
+    & \textit{Unloaded} & 6.49 lbs. \\
+    \hline
+    \multirow{2}{*}{\textbf{Length}}  & \textit{Buttstock Closed} & 29.75 in. \\ \cline{2-1}\cline{3-2}
+    & \textit{Buttstock Open} & 33 in. \\
+    \hline
+    \textbf{Rifling} & \multicolumn{2}{l|}{RH 1/7 twist} \\
+    \hline
+    \textbf{Muzzle Velocity} & \multicolumn{2}{l|}{2970 ft/s.} \\
+    \hline
+    \multirow{2}{*}{\textbf{Max Effective Range}}  & \textit{Point} & 500m \\ \cline{2-1}\cline{3-2}
+    & \textit{Area} & 600m \\
+    \hline
+    \textbf{Max Range} & \multicolumn{2}{l|}{3600m} \\
+    \hline
+    \multicolumn{3}{|c|}{\cellcolor[HTML]{BBBBBB}\textbf{Rates of Fire}} \\
+    \hline
+    \textbf{Semi-auto} & \multicolumn{2}{l|}{45 rpm} \\
+    \hline
+    \textbf{Semi-auto} & \multicolumn{2}{l|}{45 rpm} \\
+    \hline
+    \textbf{Automatic} & \multicolumn{2}{l|}{150--200 rpm} \\
+    \hline
+    \textbf{Cyclic} & \multicolumn{2}{l|}{700--900 rpm} \\
+    \hline
+\end{tabular}
+\end{center}
+}
+
+\section{Medical}
+\subsection{MARCH-PAWS}
+
+\subsection{Field Care}
+\begin{itemize}
+    \item \textbf{Phase 1: Care Under Fire (CUF)}. Rendered while under enemy fire.
+    \item \textbf{Phase 2: Tactical Field Care (TFC)}. Rendered when no longer under effective enemy fire or threat.
+\end{itemize}
+
+
+\subsubsection{Care Under Fire (CUF)}
+\begin{enumerate}
+    \item Return fire and take cover.
+    \item Direct casualty to remain engaged.
+    \item Direct casualty to apply self-aid and move to cover.
+    \item Gain fire superiority.
+    \item Approach the casualty.
+        \begin{itemize}
+            \item Never move to a casualty under fire. Wait until hostile fire is suppressed.
+        \end{itemize}
+    \item Conduct a visual blood sweep. Look for signs of major life-threatening bleeding:
+        \begin{itemize}
+            \item Bright red blood pooling on the ground.
+            \item Overlying clothes soaked with blood.
+            \item Traumatic amputation of arm or leg.
+            \item Pulsatile or steady bleeding from the wound. 
+        \end{itemize}
+        A person can die from a major artery bleed in as little as three minutes.
+    \item If the casualty is suffering life-threatening bleeding, place a tourniquet. Get the casualty out of the kill zone if they cannot move.
+    \begin{itemize}
+        \item Never use your own tourniquet. Use the casualty's (check their JFAK). If the casualty does not have one, check the CLS bag.
+        \item Once bleeding is controlled, carry or drag the casualty to cover. Do not consider spinal injuries. This is care under fire.
+    \end{itemize}
+    \item \textbf{Extraction}. Casualty's must be extracted by unit SOP.
+        \begin{itemize}
+            \item If the casualty is on fire, put the fire out immediately.
+            \item Move the casualty to a safe location.
+        \end{itemize}
+\end{enumerate}
+
+\subsubsection{Tactical Field Care (TFC)}
+\begin{enumerate}
+    \item Establish a security perimeter in accordance with unit TACSOP and/or battle drills.
+    \item Maintain tactical situational awareness.
+    \item For casualties with altered mental status:
+    \begin{itemize}
+        \item Weapons cleared and secured.
+        \item Radios/communications equipment secured.
+        \item Sensitive items redistributed.
+    \end{itemize}
+\end{enumerate}
+
+\section{Creeds}
+\subsection{The NCO Creed}
+No one is more professional than I. I am a noncommissioned officer, a leader of Soldiers. As a noncommissioned officer, I realize that I am a member of a time honored corps, which is known as "The Backbone of the Army". I am proud of the Corps of noncommissioned officers and will at all times conduct myself so as to bring credit upon the Corps, the military service and my country regardless of the situation in which I find myself. I will not use my grade or position to attain pleasure, profit, or personal safety.
+
+Competence is my watchword. My two basic responsibilities will always be uppermost in my mind—accomplishment of my mission and the welfare of my Soldiers. I will strive to remain technically and tactically proficient. I am aware of my role as a noncommissioned officer. I will fulfill my responsibilities inherent in that role. All Soldiers are entitled to outstanding leadership; I will provide that leadership. I know my Soldiers and I will always place their needs above my own. I will communicate consistently with my Soldiers and never leave them uninformed. I will be fair and impartial when recommending both rewards and punishment.
+
+Officers of my unit will have maximum time to accomplish their duties; they will not have to accomplish mine. I will earn their respect and confidence as well as that of my Soldiers. I will be loyal to those with whom I serve; seniors, peers, and subordinates alike. I will exercise initiative by taking appropriate action in the absence of orders. I will not compromise my integrity, nor my moral courage. I will not forget, nor will I allow my comrades to forget that we are professionals, noncommissioned officers, leaders!
+
+\subsection{The Soldier's Creed}
+I am an American Soldier.
+
+I am a warrior and a member of a team.
+
+I serve the people of the United States, and live the Army Values.
+
+I will always place the mission first.
+
+I will never accept defeat.
+
+I will never quit.
+
+I will never leave a fallen comrade.
+
+I am disciplined, physically and mentally tough, trained and proficient in my warrior tasks and drills.
+
+I always maintain my arms, my equipment and myself.
+
+I am an expert and I am a professional.
+
+I stand ready to deploy, engage, and destroy, the enemies of the United States of America in close combat.
+
+I am a guardian of freedom and the American way of life.
+
+I am an American Soldier.
+
 \section{Glossary of Acronyms}
 Below are some acronyms you will see over and over again.
 
@@ -745,7 +1086,7 @@ Below are some acronyms you will see over and over again.
   \sortitem{\textbf{BDE}. Brigade.}
   \sortitem{\textbf{BLUF}. Bottom line up front.}
   \sortitem{\textbf{ALCON}. All concerned. Used to preface emails/messages, akin to "To whom this may concern."}
-  \sortitem{\textbf{NLT}. No later than.}
+  \sortitem{\textbf{NLT}. "no later than".}
   \sortitem{\textbf{ATW}. All the way. Common email/message closer.}
   \sortitem{\textbf{RLTW}. Rangers lead the way. Common email/message closer.}
   \sortitem{\textbf{V/R.} Very respectfully. Common email/message closer. Ironically not very respectful to shorten "very respectfully" but that's just me.}
@@ -759,6 +1100,13 @@ Below are some acronyms you will see over and over again.
   \sortitem{\textbf{ACP}. Access Control Point.}
   \sortitem{\textbf{ADP}. Army Doctrine Publication.}
   \sortitem{\textbf{AR}. Army Regulation.}
+  \sortitem{\textbf{TQ}. Tourniquet.}
+  \sortitem{\textbf{JFAK}. Joint First Aid Kit.}
+  \sortitem{\textbf{IFAK}. Individual First Aid Kit.}
+  \sortitem{\textbf{IOT}. In order to.}
+  \sortitem{\textbf{BPT}. Be prepared to.}
+  \sortitem{\textbf{SLLS}. Stop, look, listen, smell.}
+  \sortitem{\textbf{ERRP}. En route rally point.}
 \end{sortedlist}
 
 \section{Regulation Appendix}
@@ -777,6 +1125,7 @@ This appendix lists some oft-cited Army-related regulations and publications.
 \addsymbol{AR 600-8-19}{Enlisted promotions and demotions.}
 \addsymbol{TC 3-25.26}{Land navigation.}
 \addsymbol{TC 4-02.3}{Field sanitation.}
+\addsymbol{TC 3-22.9}{Rifle and carbine.}
 
 % Sort database based on symbol
 \dtlsort{symbol}{symboldef}{\dtlwordindexcompare}
